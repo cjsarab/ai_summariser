@@ -4,10 +4,13 @@ import copy from './copy.svg'
 import logo from './logo.svg'
 import tick from './tick.svg'
 
+import submit from './login.png'
+
 export {
     linkIcon,
     loader,
     copy,
     logo,
-    tick
+    tick,
+    submit
 }
