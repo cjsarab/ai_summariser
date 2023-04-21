@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
-import { copy, linkIcon, loader, tick, submit } from '../assets';
+import { copy, linkIcon, loader, tick, trash, send } from '../assets';
 import { useLazyGetSummaryQuery } from '../services/article';
 
 const Demo = () => {
@@ -43,10 +43,16 @@ const Demo = () => {
     }
   }
 
-  const handleCopy = (copyUrl) => {
-    setCopied(copyUrl);
-    navigator.clipboard.writeText(copyUrl);
+  const handleCopy = (urlToCopy) => {
+    setCopied(urlToCopy);
+    navigator.clipboard.writeText(urlToCopy);
     setTimeout(() => setCopied(false), 3000);
+  }
+
+  const handleDelete = (urlToDelete) => {
+    const updatedAllArticles = allArticles.filter(article => article.url !== urlToDelete)
+    setAllArticles(updatedAllArticles)
+    localStorage.setItem('articles', JSON.stringify(updatedAllArticles))
   }
 
   return (
@@ -80,15 +86,15 @@ const Demo = () => {
             className='submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700'
           >
             <img 
-              src={submit} 
+              src={send} 
               alt="submit" 
-              className="absolute right-0"
+              className="w-5 h-5"
             />
           </button>
         </form>
 
         {/* Browser URL History */}
-        <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+        <div className="flex flex-col gap-2 max-h-60 overflow-y-auto">
           {allArticles.map((item, index) => (
             <div
               key={`link-${index}`}
@@ -108,6 +114,16 @@ const Demo = () => {
               <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">
                 {item.url}
               </p>
+              <div 
+                className="delete_btn"
+                onClick={() => handleDelete(item.url)}
+              >
+                <img
+                  src={trash}
+                  alt="delete_icon"
+                  className="w-[40%] h-[40%] object-contain"
+                />
+              </div>
              </div> 
           ))}
         </div>
