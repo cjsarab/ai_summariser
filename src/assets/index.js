@@ -7,6 +7,7 @@ import tick from './tick.svg'
 import trash from './trash.svg'
 import send from './send.svg'
 import github from './github.svg';
+import article from './article.png';
 
 export {
     linkIcon,
@@ -16,5 +17,6 @@ export {
     tick,
     trash,
     send,
-    github
+    github,
+    article
 }
