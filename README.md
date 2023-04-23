@@ -33,3 +33,8 @@ It also uses the Rapid API available at the link above.
 ## Are contributions welcome?
 
 Yes! This is an open source project and new features are welcome to be added. I've recently added the ability to delete copied content from local storage and I'm looking forward to adding more features.
+
+### Credits
+
+- Design inspiration https://dub.sh
+- Guidance and help https://www.jsmastery.pro/
