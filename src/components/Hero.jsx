@@ -1,4 +1,4 @@
-import { logo, github } from '../assets';
+import { logo, cjslogo, github } from '../assets';
 
 const Hero = () => {
   return (
@@ -11,6 +11,13 @@ const Hero = () => {
           onClick={() => {window.open(`https://chat.openai.com/`)}}
         >
           <img src={logo} alt="openai_logo" className="w-14 object-contain" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {window.open(`https://cammysmith.co.uk/`)}}
+        >
+          <img src={cjslogo} alt="cjs_logo" className="w-14 object-contain" />
         </button>
 
         <button

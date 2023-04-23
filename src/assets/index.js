@@ -8,6 +8,7 @@ import trash from './trash.svg'
 import send from './send.svg'
 import github from './github.svg';
 import article from './article.png';
+import cjslogo from './cjslogo.png';
 
 export {
     linkIcon,
@@ -18,5 +19,6 @@ export {
     trash,
     send,
     github,
-    article
+    article,
+    cjslogo
 }
